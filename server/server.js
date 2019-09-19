@@ -11,9 +11,29 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+var gget=0
+var ppost=0
+var pput=0
+
+app.get('/', function(req, res) {
+    gget=gget+1
+    console.log("llego una peticion GET !!!! Nro: "+gget)
+    res.json('Peticion GET !!! Nro: '+gget);
+}); 
+app.post('/', function(req, res) {
+    ppost=ppost+1
+    console.log("llego una peticion POST !!!! Nro: "+ppost)
+    res.json('Peticion POST !!! Nro: '+ppost);
+}); 
+app.put('/', function(req, res) {
+    pput=pput+1
+    console.log("llego una peticion PUT !!!! Nro: "+pput)
+    res.json('Peticion PUT !!! Nro: '+pput);
+}); 
+
 
 app.get('/usuario', function(req, res) {
-    console.log("llego una peticion GET !!!!")
+    console.log("llego una peticion GET a /usuario!!!!")
     res.json('get Usuario modif LOCAL!!!');
 });
 
