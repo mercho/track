@@ -11,13 +11,29 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+app.on('request', (req, res) => {
+    console.log("esta es la req"+req)
+    console.log("esta es la res"+res)
+});
+app.on('upgrade', (req, res) => {
+    console.log("esta es la req"+req)
+    console.log("esta es la res"+res)
+});
+app.on('checkContinue', (req, res) => {
+    console.log("esta es la req"+req)
+    console.log("esta es la res"+res)
+});
+app.on('clientError', (req, res) => {
+    console.log("esta es la req"+req)
+    console.log("esta es la res"+res)
+});
 var gget=0
 var ppost=0
 var pput=0
 
 app.get('/*', function(req, res) {
     gget=gget+1
-    console.log("llego una peticion GET !!!! Nro: "+gget)
+    console.log("llego una peticion GET !!!! Nro: "+gget+" es esta "+ res)
     res.json('Peticion GET !!! Nro: '+gget);
 }); 
 app.post('/*', function(req, res) {
