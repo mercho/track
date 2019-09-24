@@ -50,6 +50,7 @@ app.on('connect', function(req, res) {
 app.on('connection', function(req, res) {
     cconn=cconn+1
     console.log("llego una conexion nueva!!!! Nro: "+cconn+" le url es: "+req.url+" el metodo es: "+req.headers)
+    console.log("El localaddres es: "+req.socket.localAddress+" El Local port es: "+req.localPort)
     //res.json('Conexion !!! Nro: '+ccon);
 });
 app.on('clientError', (req, res) => {
