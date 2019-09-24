@@ -52,7 +52,7 @@ app.on('connection', function(req, res) {
     console.log("llego una conexion nueva!!!! Nro: "+cconn+" le url es: "+req.url+" el metodo es: "+req.headers)
     console.log("El localaddres es: "+req.localAddress+" El Local port es: "+req.localPort)
     console.log("Esta es la req connection - El metodo es: "+req.method+" El header es: "+req.headers+" el status code es: "+req.statusCode )
-    console.log("El header 2 es: "+req.headers)
+    console.log("El header 2 es: "+req.rawHeaders[2])
     console.log("*******************************************")
     //res.json('Conexion !!! Nro: '+ccon);
 });
