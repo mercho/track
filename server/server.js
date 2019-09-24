@@ -44,12 +44,12 @@ var ccon=0
 var cconn=0
 app.on('connect', function(req, res) {
     ccon=ccon+1
-    console.log("llego una conect nueva!!!! Nro: "+ccon+" le url es: "+req.url+" el metodo es: "+req.method)
+    console.log("llego una conect nueva!!!! Nro: "+ccon)
     //res.json('Conect !!! Nro: '+ccon);
 });
 app.on('connection', function(req, res) {
     cconn=cconn+1
-    console.log("llego una conexion nueva!!!! Nro: "+cconn)
+    console.log("llego una conexion nueva!!!! Nro: "+cconn+" le url es: "+req.url+" el metodo es: "+req.method)
     //res.json('Conexion !!! Nro: '+ccon);
 });
 app.on('clientError', (req, res) => {
