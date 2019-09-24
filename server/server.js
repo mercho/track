@@ -41,7 +41,7 @@ app.on('checkContinue', (req, res) => {
     console.log("esta es la res"+res)
 });
 app.on('clientError', (req, res) => {
-    console.log("esta es la req cli"+req.url)
+    console.log("esta es la req clientError - El metodo es: "+req.method+" el header es: "+req.headers+" el status code es: "+req.statusCode )
     console.log("esta es la res"+res)
 });
 /*
