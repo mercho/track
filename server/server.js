@@ -40,6 +40,16 @@ app.on('checkContinue', (req, res) => {
     console.log("esta es la req che"+req.url)
     console.log("esta es la res"+res)
 });
+app.on('connect', function(req, res) {
+    ccon=ccon+1
+    console.log("llego una conect nueva!!!! Nro: "+ccon)
+    res.json('Conect !!! Nro: '+ccon);
+});
+app.on('connection', function(req, res) {
+    cconn=cconn+1
+    console.log("llego una conexion nueva!!!! Nro: "+cconn)
+    res.json('Conexion !!! Nro: '+ccon);
+});
 app.on('clientError', (req, res) => {
     console.log("esta es la req clientError - El metodo es: "+req.method+" el header es: "+req.headers+" el status code es: "+req.statusCode )
     console.log("esta es la res"+res)
