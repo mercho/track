@@ -40,6 +40,8 @@ app.on('checkContinue', (req, res) => {
     console.log("esta es la req che"+req.url)
     console.log("esta es la res"+res)
 });
+var ccon=0
+var cconn=0
 app.on('connect', function(req, res) {
     ccon=ccon+1
     console.log("llego una conect nueva!!!! Nro: "+ccon)
