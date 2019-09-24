@@ -49,7 +49,7 @@ app.on('connect', function(req, res) {
 });
 app.on('connection', function(req, res) {
     cconn=cconn+1
-    console.log("llego una conexion nueva!!!! Nro: "+cconn+" le url es: "+req.url+" el metodo es: "+req.method)
+    console.log("llego una conexion nueva!!!! Nro: "+cconn+" le url es: "+req.url+" el metodo es: "+req.headers)
     //res.json('Conexion !!! Nro: '+ccon);
 });
 app.on('clientError', (req, res) => {
